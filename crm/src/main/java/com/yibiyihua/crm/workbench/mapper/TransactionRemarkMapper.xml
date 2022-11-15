@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yibiyihua.crm.workbench.mapper.TransactionRemarkMapper" >
+  <!--实体类属性、列名映射-->
+  <resultMap id="BaseResultMap" type="transactionRemark" >
+    <id column="id" property="id"/>
+    <result column="note_content" property="noteContent"/>
+    <result column="create_by" property="createBy"/>
+    <result column="create_time" property="createTime"/>
+    <result column="edit_by" property="editBy"/>
+    <result column="edit_time" property="editTime"/>
+    <result column="edit_flag" property="editFlag"/>
+    <result column="tran_id" property="tranId"/>
+  </resultMap>
+  <!--sql片段-->
+  <sql id="Base_Column_List" >
+    id, note_content, create_by, create_time, edit_by, edit_time, edit_flag, tran_id
+  </sql>
+
+  <!--
+  批量添加交易备注
+  int insertTransactionRemarkByList(List<TransactionRemark> transactionRemarkList)-->
+  <insert id="insertTransactionRemarkByList" parameterType="transactionRemark">
+    insert into tbl_transaction_remark (id, note_content, create_by, create_time, edit_by, edit_time, edit_flag,tran_id)
+    values
+    <foreach collection="list" item="obj" separator=",">
+      (#{obj.id}, #{obj.noteContent}, #{obj.createBy}, #{obj.createTime}, #{obj.editBy}, #{obj.editTime},
+      #{obj.editFlag}, #{obj.tranId})
+    </foreach>
+  </insert>
+
+  <!--
+  根据交易ids删除交易备注
+  int deleteRemarkByTransactionIds(String[] transactionIds)-->
+  <delete id="deleteRemarkByTransactionIds" parameterType="string">
+    delete from tbl_transaction_remark
+    where tran_id in
+    <foreach collection="array" item="tranId" open="(" separator="," close=")">
+      #{tranId}
+    </foreach>
+  </delete>
+
+  <!--
+  根据交易id查询交易备注
+  List<TransactionRemark> selectRemarkByTransactionId(String tranId)-->
+  <select id="selectRemarkByTransactionId" parameterType="string" resultMap="BaseResultMap">
+    select tr.id,
+           tr.note_content,
+           u1.name as create_by,
+           tr.create_time,
+           u2.name as edit_by,
+           tr.edit_time,
+           tr.edit_flag
+    from tbl_transaction_remark tr
+           join tbl_user u1 on tr.create_by = u1.id
+           left join tbl_user u2 on tr.edit_by = u2.id
+    where tr.tran_id = #{tranId}
+    order by tr.create_time
+  </select>
+
+  <!--
+  添加交易备注
+  int insertTransactionRemark(TransactionRemark transactionRemark)-->
+  <insert id="insertTransactionRemark" parameterType="transactionRemark" >
+    insert into tbl_transaction_remark (id, note_content, create_by, create_time, edit_flag, tran_id)
+    values (#{id}, #{noteContent}, #{createBy}, #{createTime}, #{editFlag}, #{tranId})
+  </insert>
+
+  <!--
+  根据id删除交易备注
+  int deleteTransactionRemarkById(String id)-->
+  <delete id="deleteTransactionRemarkById" parameterType="string">
+    delete from tbl_transaction_remark
+    where id = #{id}
+  </delete>
+
+  <!--
+  根据id保存编辑的文本内容
+  int updateTransactionRemarkById(TransactionRemark transactionRemark)-->
+  <update id="updateTransactionRemarkById" parameterType="transactionRemark">
+    update tbl_transaction_remark
+    set note_content = #{noteContent},
+        edit_by      = #{editBy},
+        edit_time    = #{editTime},
+        edit_flag    = #{editFlag}
+    where id = #{id}
+  </update>
+</mapper>

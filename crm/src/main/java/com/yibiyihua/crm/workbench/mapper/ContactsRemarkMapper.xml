@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yibiyihua.crm.workbench.mapper.ContactsRemarkMapper" >
+  <!--实体类属性、列名映射-->
+  <resultMap id="BaseResultMap" type="contactsRemark" >
+    <id column="id" property="id"/>
+    <result column="note_content" property="noteContent"/>
+    <result column="create_by" property="createBy"/>
+    <result column="create_time" property="createTime"/>
+    <result column="edit_by" property="editBy"/>
+    <result column="edit_time" property="editTime"/>
+    <result column="edit_flag" property="editFlag"/>
+    <result column="contacts_id" property="contactsId"/>
+  </resultMap>
+  <!--sql片段-->
+  <sql id="Base_Column_List" >
+    id, note_content, create_by, create_time, edit_by, edit_time, edit_flag, contacts_id
+  </sql>
+
+  <!--
+  从线索备注获取联系人备注添加至联系人备注
+  int insertContactsRemarkByList(List<ContactsRemark> contactsRemarkList)-->
+  <insert id="insertContactsRemarkByList" parameterType="contactsRemark">
+    insert into tbl_contacts_remark (id, note_content, create_by,create_time, edit_by, edit_time,edit_flag, contacts_id)
+    values
+    <foreach collection="list" item="obj" separator=",">
+      (#{obj.id}, #{obj.noteContent}, #{obj.createBy},#{obj.createTime}, #{obj.editBy}, #{obj.editTime},#{obj.editFlag}, #{obj.contactsId})
+    </foreach>
+  </insert>
+
+  <!--
+  根据联系人id查询联系人备注
+  List<ContactsRemark> selectContactsRemarkByContactsId(String contactsId)-->
+  <select id="selectContactsRemarkByContactsId" parameterType="string" resultMap="BaseResultMap">
+    select cr.id,
+           cr.note_content,
+           u1.name as create_by,
+           cr.create_time,
+           u2.name as edit_by,
+           cr.edit_time,
+           cr.edit_flag,
+           cr.contacts_id
+    from tbl_contacts_remark cr
+           join tbl_user u1 on cr.create_by = u1.id
+           left join tbl_user u2 on cr.edit_by = u2.id
+    where cr.contacts_id = #{contactsId}
+    order by cr.create_time
+  </select>
+
+  <!--
+  保存创建的联系人备注
+  int insertContactsRemark(ContactsRemark contactsRemark)-->
+  <insert id="insertContactsRemark" parameterType="contactsRemark" >
+    insert into tbl_contacts_remark (id, note_content, create_by, create_time, edit_flag, contacts_id)
+    values (#{id}, #{noteContent}, #{createBy}, #{createTime}, #{editFlag}, #{contactsId})
+  </insert>
+
+  <!--根据id删除联系人备注
+  int deleteContactsRemarkById(String id)-->
+  <delete id="deleteContactsRemarkById" parameterType="string">
+    delete
+    from tbl_contacts_remark
+    where id = #{id}
+  </delete>
+
+  <!--
+  根据id保存编辑的联系人备注
+  int updateContactsRemarkById(ContactsRemark contactsRemark)-->
+  <update id="updateContactsRemarkById" parameterType="contactsRemark">
+    update tbl_contacts_remark
+    set note_content = #{noteContent},
+        edit_by = #{editBy},
+        edit_time = #{editTime},
+        edit_flag = #{editFlag}
+    where id = #{id}
+  </update>
+
+</mapper>
