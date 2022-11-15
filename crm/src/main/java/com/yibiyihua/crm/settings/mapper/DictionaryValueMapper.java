@@ -5,19 +5,6 @@ import com.yibiyihua.crm.settings.bean.DictionaryValue;
 import java.util.List;
 
 public interface DictionaryValueMapper {
-
-    int deleteByPrimaryKey(String id);
-
-    int insert(DictionaryValue record);
-
-    int insertSelective(DictionaryValue record);
-
-    DictionaryValue selectByPrimaryKey(String id);
-
-    int updateByPrimaryKeySelective(DictionaryValue record);
-
-    int updateByPrimaryKey(DictionaryValue record);
-
     /**
      * 根据字典类型查询字典值
      * @param typeCode

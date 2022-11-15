@@ -2,7 +2,6 @@ package com.yibiyihua.crm.workbench.mapper;
 
 import com.yibiyihua.crm.workbench.bean.Funnel;
 import com.yibiyihua.crm.workbench.bean.Transaction;
-import com.yibiyihua.crm.workbench.bean.TransactionHistory;
 
 import java.util.List;
 import java.util.Map;

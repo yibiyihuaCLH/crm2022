@@ -1,6 +1,5 @@
 package com.yibiyihua.crm.workbench.service.Impl;
 
-import com.yibiyihua.crm.workbench.bean.Activity;
 import com.yibiyihua.crm.workbench.bean.ActivityRemark;
 import com.yibiyihua.crm.workbench.mapper.ActivityRemarkMapper;
 import com.yibiyihua.crm.workbench.service.ActivityRemarkService;
@@ -8,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author ：yibiyihua

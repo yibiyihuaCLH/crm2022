@@ -9,7 +9,6 @@ import com.yibiyihua.crm.settings.bean.User;
 import com.yibiyihua.crm.settings.service.DictionaryValueService;
 import com.yibiyihua.crm.settings.service.UserService;
 import com.yibiyihua.crm.workbench.bean.Contacts;
-import com.yibiyihua.crm.workbench.bean.Transaction;
 import com.yibiyihua.crm.workbench.service.ContactsService;
 import com.yibiyihua.crm.workbench.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;

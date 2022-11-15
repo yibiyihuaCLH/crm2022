@@ -8,7 +8,6 @@ import com.yibiyihua.crm.commons.utils.UUIDUtil;
 import com.yibiyihua.crm.settings.bean.User;
 import com.yibiyihua.crm.settings.service.UserService;
 import com.yibiyihua.crm.workbench.bean.Activity;
-import com.yibiyihua.crm.workbench.bean.ActivityRemark;
 import com.yibiyihua.crm.workbench.service.ActivityRemarkService;
 import com.yibiyihua.crm.workbench.service.ActivityService;
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -29,7 +28,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * @author ：yibiyihua
