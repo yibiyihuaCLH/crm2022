@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yibiyihua.crm.workbench.mapper.ClueActivityRelationMapper">
+    <!--实体类、列名映射-->
+    <resultMap id="BaseResultMap" type="clueActivityRelation">
+        <id column="id" property="id"/>
+        <result column="clue_id" property="clueId"/>
+        <result column="activity_id" property="activityId"/>
+    </resultMap>
+    <!--sql片段-->
+    <sql id="Base_Column_List" >
+        id, clue_id, activity_id
+    </sql>
+    <!--
+    增加线索、市场活动关联记录
+    int insertCreateClueActivityRelation(ClueActivityRelation clueActivityRelation)-->
+    <insert id="insertCreateClueActivityRelation" parameterType="clueActivityRelation">
+        insert into tbl_clue_activity_relation (id, clue_id, activity_id)
+        values
+        <foreach collection="list" item="obj" separator=",">
+            (#{obj.id}, #{obj.clueId}, #{obj.activityId})
+        </foreach>
+    </insert>
+
+    <!--
+    根据线索id、市场活动id解除关联
+    int deleteRelationshipByClueActivityId(ClueActivityRelation clueActivityRelation)-->
+    <delete id="deleteRelationshipByClueActivityId" parameterType="clueActivityRelation">
+        delete
+        from tbl_clue_activity_relation
+        where clue_id = #{clueId}
+          and activity_id = #{activityId}
+    </delete>
+
+    <!--
+    根据线索id、市场活动id查询关联
+    int selectRelationshipCountByClueActivityId(ClueActivityRelation clueActivityRelation)-->
+    <select id="selectRelationshipCountByClueActivityId" parameterType="clueActivityRelation" resultType="int">
+        select count(*)
+        from tbl_clue_activity_relation
+        where clue_id = #{clueId}
+          and activity_id = #{activityId}
+    </select>
+
+    <!--
+    根据线索id查询线索、市场活动关联关系
+    List<String> selectRelationShipByClueId(String clueId)-->
+    <select id="selectRelationShipByClueId" parameterType="string" resultType="string">
+        select activity_id
+        from tbl_clue_activity_relation
+        where clue_id = #{clueId}
+    </select>
+
+    <!--
+    根据线索id删除线索、市场活动关系
+    int deleteRelationshipByClueId(String clueId)-->
+    <delete id="deleteRelationshipByClueId" parameterType="string">
+        delete
+        from tbl_clue_activity_relation
+        where clue_id = #{clueId}
+    </delete>
+
+    <!--
+    根据市场活动ids删除线索、市场活动关联关系
+    int deleteRelationshipByActivityIds(String[] activityIds)-->
+    <delete id="deleteRelationshipByActivityIds" parameterType="string">
+        delete from tbl_clue_activity_relation
+        where activity_id in
+        <foreach collection="array" item="activityId" open="(" separator="," close=")">
+            #{activityId}
+        </foreach>
+    </delete>
+
+    <!--
+    根据线索ids批量删除线索、市场活动关系
+    int deleteRelationshipByClueIds(String[] clueIds)-->
+    <delete id="deleteRelationshipByClueIds" parameterType="string">
+        delete
+        from tbl_clue_activity_relation
+        where clue_id in
+        <foreach collection="array" item="clueId" open="(" separator="," close=")">
+            #{clueId}
+        </foreach>
+    </delete>
+</mapper>

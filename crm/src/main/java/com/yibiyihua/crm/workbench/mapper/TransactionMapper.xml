@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yibiyihua.crm.workbench.mapper.TransactionMapper" >
+  <!--实体类属性、列名映射-->
+  <resultMap id="BaseResultMap" type="transaction" >
+    <id column="id" property="id"/>
+    <result column="owner" property="owner"/>
+    <result column="money" property="money"/>
+    <result column="name" property="name"/>
+    <result column="expected_date" property="expectedDate"/>
+    <result column="customer_id" property="customerId"/>
+    <result column="stage" property="stage"/>
+    <result column="type" property="type"/>
+    <result column="source" property="source"/>
+    <result column="activity_id" property="activityId"/>
+    <result column="contacts_id" property="contactsId"/>
+    <result column="create_by" property="createBy"/>
+    <result column="create_time" property="createTime"/>
+    <result column="edit_by" property="editBy"/>
+    <result column="edit_time" property="editTime"/>
+    <result column="description" property="description"/>
+    <result column="contact_summary" property="contactSummary"/>
+    <result column="next_contact_time" property="nextContactTime"/>
+  </resultMap>
+  <!--sql片段-->
+  <sql id="Base_Column_List" >
+    id, owner, money, name, expected_date, customer_id, stage, type, source, activity_id, 
+    contacts_id, create_by, create_time, edit_by, edit_time, description, contact_summary, 
+    next_contact_time
+  </sql>
+
+  <!--
+  添加交易记录
+  int insertTransaction(Transaction transaction)-->
+  <insert id="insertTransaction" parameterType="transaction">
+    insert into tbl_transaction (id, owner, money, name, expected_date, customer_id, stage, type, source, activity_id,
+                                 contacts_id, create_by, create_time, description, contact_summary, next_contact_time)
+    values (#{id}, #{owner}, #{money}, #{name}, #{expectedDate}, #{customerId}, #{stage}, #{type}, #{source},
+            #{activityId}, #{contactsId}, #{createBy}, #{createTime}, #{description}, #{contactSummary},
+            #{nextContactTime})
+  </insert>
+
+  <!--
+  根据客户id查询交易记录
+  List<Transaction> selectTransactionByCustomerId(String customerId)-->
+  <select id="selectTransactionByCustomerId" parameterType="string" resultMap="BaseResultMap">
+    select t.id, t.name, t.money, dv1.value as stage, t.expected_date, dv2.value as type
+    from tbl_transaction t
+           join tbl_dic_value dv1 on t.stage = dv1.id
+           left join tbl_dic_value dv2 on t.type = dv2.id
+    where customer_id = #{clueId}
+    order by t.create_time desc
+  </select>
+
+  <!--
+  根据客户ids删除客户交易
+  int deleteTransactionByCustomerIds(String[] customerIds)-->
+  <delete id="deleteTransactionByCustomerIds" parameterType="string">
+    delete from tbl_transaction
+    where customer_id in
+    <foreach collection="array" item="customerId" open="(" separator="," close=")">
+      #{customerId}
+    </foreach>
+  </delete>
+
+  <!--
+  根据id删除交易
+  int deleteTransactionById(String id)-->
+  <delete id="deleteTransactionById" parameterType="string">
+    delete from tbl_transaction
+    where id = #{id}
+  </delete>
+
+  <!--
+  根据联系人id查询交易
+  List<Transaction> selectTransactionByContactsId(String contactsId)-->
+  <select id="selectTransactionByContactsId" parameterType="string" resultMap="BaseResultMap">
+    select t.id,
+           t.name,
+           t.money,
+           dv1.value as stage,
+           t.expected_date,
+           dv2.value as type
+    from tbl_transaction t
+           join tbl_dic_value dv1 on t.stage = dv1.id
+           join tbl_dic_value dv2 on t.type = dv2.id
+    where t.contacts_id = #{contactsId}
+    order by t.create_time desc
+  </select>
+
+  <!--
+  根据查询条件分页查询交易记录
+  List<Transaction> selectTransactionByConditionForPage(Map<String, Object> map)-->
+  <select id="selectTransactionByConditionForPage" parameterType="map" resultMap="BaseResultMap">
+    select t.id,
+    t.name,
+    c1.name as customer_id,
+    dv1.value as stage,
+    dv2.value as type,
+    u.name as owner,
+    dv3.value as source,
+    c2.full_name as contacts_id
+    from tbl_transaction t
+    join tbl_customer c1 on t.customer_id = c1.id
+    join tbl_dic_value dv1 on t.stage = dv1.id
+    left join tbl_dic_value dv2 on t.type = dv2.id
+    join tbl_user u on t.owner = u.id
+    left join tbl_dic_value dv3 on t.source = dv3.id
+    left join tbl_contacts c2 on t.contacts_id = c2.id
+    <where>
+      <if test="owner != null and owner != ''">
+        and u.name like concat('%',#{owner},'%')
+      </if>
+      <if test="name != null and name != ''">
+        and t.name like concat('%',#{name},'%')
+      </if>
+      <if test="customerId != null and customerId != ''">
+        and c1.name like concat('%',#{customerId},'%')
+      </if>
+      <if test="stage != null and stage != ''">
+        and dv1.id = #{stage}
+      </if>
+      <if test="type != null and type != ''">
+        and dv2.id = #{type}
+      </if>
+      <if test="source != null and source != ''">
+        and dv3.id = #{source}
+      </if>
+      <if test="contactsId != null and contactsId != ''">
+        and c2.full_name = #{contactsId}
+      </if>
+    </where>
+    order by c1.create_time desc
+    limit #{beginNo},#{pageSize}
+  </select>
+
+  <!--
+  根据查询条件查询中交易条数
+  int selectCountByCondition(Map<String, Object> map)-->
+  <select id="selectCountByCondition" parameterType="map" resultType="int">
+    select count(*)
+    from tbl_transaction t
+    join tbl_customer c1 on t.customer_id = c1.id
+    join tbl_dic_value dv1 on t.stage = dv1.id
+    left join tbl_dic_value dv2 on t.type = dv2.id
+    join tbl_user u on t.owner = u.id
+    left join tbl_dic_value dv3 on t.source = dv3.id
+    left join tbl_contacts c2 on t.contacts_id = c2.id
+    <where>
+      <if test="owner != null and owner != ''">
+        and u.name like concat('%',#{owner},'%')
+      </if>
+      <if test="name != null and name != ''">
+        and t.name like concat('%',#{name},'%')
+      </if>
+      <if test="customerId != null and customerId != ''">
+        and c1.name like concat('%',#{customerId},'%')
+      </if>
+      <if test="stage != null and stage != ''">
+        and dv1.id = #{stage}
+      </if>
+      <if test="type != null and type != ''">
+        and dv2.id = #{type}
+      </if>
+      <if test="source != null and source != ''">
+        and dv3.id = #{source}
+      </if>
+      <if test="contactsId != null and contactsId != ''">
+        and c2.full_name = #{contactsId}
+      </if>
+    </where>
+  </select>
+
+  <!--
+  根据id查询交易信息
+  Transaction selectTransactionById(String id)-->
+  <select id="selectTransactionById" parameterType="string" resultMap="BaseResultMap">
+    select t.id,
+           t.owner,
+           t.money,
+           t.name,
+           t.expected_date,
+           c1.name      as customer_id,
+           t.stage,
+           t.type,
+           t.source,
+           a.name       as activity_id,
+           c2.full_name as contacts_id,
+           t.description,
+           t.contact_summary,
+           t.next_contact_time
+    from tbl_transaction t
+           join tbl_customer c1 on t.customer_id = c1.id
+           left join tbl_activity a on t.activity_id = a.id
+           left join tbl_contacts c2 on t.contacts_id = c2.id
+    where t.id = #{id}
+  </select>
+
+  <!--
+  根据id保存编辑的交易记录
+  int updateTransactionById(Transaction transaction)-->
+  <update id="updateTransactionById" parameterType="transaction">
+    update tbl_transaction
+    set owner = #{owner},
+    money = #{money},
+    name = #{name},
+    expected_date = #{expectedDate},
+    customer_id = #{customerId},
+    stage = #{stage},
+    type = #{type},
+    source = #{source},
+    <if test="activityId != null and activityId != ''">
+      activity_id = #{activityId},
+    </if>
+    <if test="contactsId != null and contactsId != ''">
+      contacts_id = #{contactsId},
+    </if>
+    edit_by = #{editBy},
+    edit_time = #{editTime},
+    description = #{description},
+    contact_summary = #{contactSummary},
+    next_contact_time = #{nextContactTime}
+    where id = #{id}
+  </update>
+
+  <!--
+  根据ids删除交易记录
+  int deleteTransactionByIds(String[] ids)-->
+  <delete id="deleteTransactionByIds" parameterType="string">
+    delete from tbl_transaction
+    where id in
+    <foreach collection="array" item="id" open="(" separator="," close=")">
+      #{id}
+    </foreach>
+  </delete>
+
+  <!--
+  根据id查询交易详细信息
+  Transaction selectTransactionForDetailById(String id)-->
+  <select id="selectTransactionForDetailById" resultMap="BaseResultMap">
+    select t.id,
+           u3.name      as owner,
+           t.money,
+           t.name,
+           t.expected_date,
+           c1.name      as customer_id,
+           dv1.value    as stage,
+           dv2.value    as type,
+           dv3.value    as source,
+           a.name       as activity_id,
+           c2.full_name as contacts_id,
+           t.description,
+           t.contact_summary,
+           t.next_contact_time,
+           u1.name      as create_by,
+           t.create_time,
+           u2.name      as edit_by,
+           t.edit_time
+    from tbl_transaction t
+           join tbl_customer c1 on t.customer_id = c1.id
+           left join tbl_activity a on t.activity_id = a.id
+           left join tbl_contacts c2 on t.contacts_id = c2.id
+           join tbl_dic_value dv1 on t.stage = dv1.id
+           left join tbl_dic_value dv2 on t.type = dv2.id
+           left join tbl_dic_value dv3 on t.source = dv3.id
+           join tbl_user u1 on t.create_by = u1.id
+           left join tbl_user u2 on t.edit_by = u2.id
+           join tbl_user u3 on t.owner = u3.id
+    where t.id = #{id}
+  </select>
+
+  <!--
+  更新交易阶段
+  int updateTransactionStage(Transaction transaction)-->
+  <update id="updateTransactionStage" parameterType="transaction">
+    update tbl_transaction
+    set stage = #{stage}
+    where id = #{id}
+  </update>
+
+  <!--
+  根据stage分组查询交易数
+  List<Funnel> selectCountOfTranGroupByStage()-->
+  <select id="selectCountOfTranGroupByStage" resultType="funnel">
+    select dv.value as name, count(t.stage) as value
+    from tbl_transaction t
+      join tbl_dic_value dv
+    on t.stage = dv.id
+    group by t.stage
+  </select>
+</mapper>
