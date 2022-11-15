@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/settings/qx/permission/index.html" value="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/settings/qx/permission" />
+        <entry key="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/activity/detail.html" value="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/activity" />
+        <entry key="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/activity/detail.jsp" value="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/activity" />
+        <entry key="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/activity/index.jsp" value="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/activity" />
+        <entry key="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/clue/detail.jsp" value="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/clue" />
+        <entry key="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/clue/index.jsp" value="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/clue" />
+        <entry key="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/contacts/detail.jsp" value="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/contacts" />
+        <entry key="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/contacts/index.html" value="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/contacts" />
+        <entry key="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/customer/detail.jsp" value="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/customer" />
+        <entry key="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/customer/index.jsp" value="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/customer" />
+        <entry key="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/transaction/detail.jsp" value="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/transaction" />
+        <entry key="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/transaction/index.jsp" value="file://$PROJECT_DIR$/crm/src/main/webapp/WEB-INF/pages/workbench/transaction" />
+      </map>
+    </option>
+  </component>
+</project>

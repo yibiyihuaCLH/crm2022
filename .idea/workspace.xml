@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="crm:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="66fd8cda-7aa8-48e0-a9a1-a15b27a76df6" name="变更" comment="first commit crm project" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SqlMapConfig" />
+        <option value="spring-beans.schema" />
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="properties" />
+        <option value="Jsp File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../../../../../../Program Files (x86)/apache-maven-3.3.9" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="#JAVA_HOME" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="#JAVA_HOME" />
+    <option name="runMavenInBackground" value="false" />
+    <option name="skipTests" value="true" />
+    <option name="vmOptions" value="-DarchitectCatalog=internal" />
+  </component>
+  <component name="ProjectId" id="2F9GBvt1ECsssgUuqYJbaTek5SA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yibiyihua/Desktop/GitTest/CRM_Project&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;1fece0cb254f1f45891bc9ee9fed72a9&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yibiyihua\OneDrive\Java\8.SSM\2.spring\SpringProject\SpringMVCProject\CRM_Project\crm\src\main\webapp\image" />
+      <recent name="C:\Users\yibiyihua\OneDrive\Java\8.SSM\2.spring\SpringProject\SpringMVCProject\CRM_Project\insert\lib" />
+      <recent name="C:\Users\yibiyihua\OneDrive\Java\8.SSM\2.spring\SpringProject\SpringMVCProject\CRM_Project\insert\src\util" />
+      <recent name="C:\Users\yibiyihua\OneDrive\Java\8.SSM\2.spring\SpringProject\SpringMVCProject\CRM_Project\crm_mybatis_generator\src\main\resources" />
+      <recent name="C:\Users\yibiyihua\OneDrive\Java\8.SSM\2.spring\SpringProject\SpringMVCProject\CRM_Project\crm\src\main\webapp\jquery" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yibiyihua\OneDrive\Java\8.SSM\2.spring\SpringProject\SpringMVCProject\CRM_Project\crm\src\main\webapp\WEB-INF\pages\workbench\activity" />
+      <recent name="C:\Users\yibiyihua\OneDrive\Java\8.SSM\2.spring\SpringProject\SpringMVCProject\CRM_Project\crm\src\main\webapp" />
+      <recent name="C:\Users\yibiyihua\OneDrive\Java\8.SSM\2.spring\SpringProject\SpringMVCProject\CRM_Project\insert\src\resources" />
+      <recent name="C:\Users\yibiyihua\OneDrive\Java\8.SSM\2.spring\SpringProject\SpringMVCProject\CRM_Project\insert\src\util" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat 服务器.Tomcat 9.0.43">
+    <configuration name="Hello" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Hello" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.yibiyihua.crm.workbench.bean.Hello" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yibiyihua.crm.workbench.bean.Hello" />
+      <module name="crm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yibiyihua.crm.workbench.bean.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyTest.selectActivityByNameWithoutIdTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="crm" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyTest" />
+      <option name="METHOD_NAME" value="selectActivityByNameWithoutIdTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyTest.selectCustomerCountByConditionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="crm" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyTest" />
+      <option name="METHOD_NAME" value="selectCustomerCountByConditionTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyTest.selectTransactionByCustomerIdTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="crm" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyTest" />
+      <option name="METHOD_NAME" value="selectTransactionByCustomerIdTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.43" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.43" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://127.0.0.1:8080/crm/" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="crm:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/crm" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="3bad197c-e062-4f62-ab1d-0d824d58da33" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="14043" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="crm:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.MyTest.selectTransactionByCustomerIdTest" />
+      <item itemvalue="JUnit.MyTest.selectCustomerCountByConditionTest" />
+      <item itemvalue="JUnit.MyTest.selectActivityByNameWithoutIdTest" />
+      <item itemvalue="Tomcat 服务器.Tomcat 9.0.43" />
+      <item itemvalue="应用程序.Hello" />
+      <item itemvalue="应用程序.com.yibiyihua.crm.workbench.bean.Hello" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.com.yibiyihua.crm.workbench.bean.Hello" />
+        <item itemvalue="应用程序.Hello" />
+        <item itemvalue="JUnit.MyTest.selectTransactionByCustomerIdTest" />
+        <item itemvalue="JUnit.MyTest.selectCustomerCountByConditionTest" />
+        <item itemvalue="JUnit.MyTest.selectActivityByNameWithoutIdTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="66fd8cda-7aa8-48e0-a9a1-a15b27a76df6" name="变更" comment="" />
+      <created>1663896756624</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1663896756624</updated>
+      <workItem from="1663896757967" duration="18959000" />
+      <workItem from="1663976541125" duration="20061000" />
+      <workItem from="1664007374592" duration="14280000" />
+      <workItem from="1664064004996" duration="25234000" />
+      <workItem from="1664117589365" duration="16000" />
+      <workItem from="1664149664778" duration="25879000" />
+      <workItem from="1664235197754" duration="11751000" />
+      <workItem from="1664251090217" duration="18672000" />
+      <workItem from="1664330274193" duration="750000" />
+      <workItem from="1664342264401" duration="11333000" />
+      <workItem from="1664365753954" duration="2165000" />
+      <workItem from="1664408379118" duration="78000" />
+      <workItem from="1664408472400" duration="27087000" />
+      <workItem from="1664494513086" duration="8000" />
+      <workItem from="1664494552198" duration="9210000" />
+      <workItem from="1664516733819" duration="48000" />
+      <workItem from="1664516990258" duration="363000" />
+      <workItem from="1664517377439" duration="20000" />
+      <workItem from="1664517421470" duration="5503000" />
+      <workItem from="1664539778891" duration="1148000" />
+      <workItem from="1664541222181" duration="28000" />
+      <workItem from="1664622345053" duration="194000" />
+      <workItem from="1664971480264" duration="820000" />
+      <workItem from="1665013467289" duration="17564000" />
+      <workItem from="1665062510141" duration="1257000" />
+      <workItem from="1665068424176" duration="267000" />
+      <workItem from="1665069436214" duration="36000" />
+      <workItem from="1665069497745" duration="27000" />
+      <workItem from="1665069917861" duration="365000" />
+      <workItem from="1665071879548" duration="5000" />
+      <workItem from="1665099502697" duration="29485000" />
+      <workItem from="1665186544539" duration="13640000" />
+      <workItem from="1665272819628" duration="29796000" />
+      <workItem from="1665358567549" duration="3879000" />
+      <workItem from="1665362995332" duration="27384000" />
+      <workItem from="1665444985580" duration="26179000" />
+      <workItem from="1665499493697" duration="666000" />
+      <workItem from="1665530677882" duration="26823000" />
+      <workItem from="1665617175433" duration="28113000" />
+      <workItem from="1665703549183" duration="28118000" />
+      <workItem from="1665751979185" duration="5536000" />
+      <workItem from="1665790166277" duration="34384000" />
+      <workItem from="1665847508851" duration="18000" />
+      <workItem from="1665877163061" duration="24006000" />
+      <workItem from="1665963150151" duration="23155000" />
+      <workItem from="1666049666886" duration="16629000" />
+      <workItem from="1666069093792" duration="10826000" />
+      <workItem from="1666085508523" duration="1998000" />
+      <workItem from="1666097309015" duration="6238000" />
+      <workItem from="1666136566988" duration="27102000" />
+      <workItem from="1666222422494" duration="1336000" />
+      <workItem from="1666223790994" duration="39959000" />
+      <workItem from="1666308863118" duration="37254000" />
+      <workItem from="1666395175050" duration="20835000" />
+      <workItem from="1666424313384" duration="10524000" />
+      <workItem from="1666482065464" duration="9107000" />
+      <workItem from="1666491423723" duration="28193000" />
+      <workItem from="1666536585557" duration="45000" />
+      <workItem from="1666568133710" duration="27466000" />
+      <workItem from="1666622797272" duration="1180000" />
+      <workItem from="1666654578589" duration="1479000" />
+      <workItem from="1666660043794" duration="185000" />
+      <workItem from="1666828173079" duration="2806000" />
+      <workItem from="1666925834676" duration="608000" />
+      <workItem from="1666934972884" duration="522000" />
+      <workItem from="1666940854327" duration="1426000" />
+      <workItem from="1667002631099" duration="6178000" />
+      <workItem from="1667086829093" duration="734000" />
+      <workItem from="1667122854216" duration="453000" />
+      <workItem from="1667137173127" duration="1886000" />
+      <workItem from="1667285744090" duration="116000" />
+      <workItem from="1667443489580" duration="892000" />
+      <workItem from="1667537758303" duration="153000" />
+      <workItem from="1667725824608" duration="650000" />
+      <workItem from="1667799917527" duration="1535000" />
+      <workItem from="1668148042662" duration="90000" />
+      <workItem from="1668240690052" duration="1195000" />
+      <workItem from="1668241957075" duration="9000" />
+      <workItem from="1668308150392" duration="779000" />
+      <workItem from="1668480471188" duration="3664000" />
+    </task>
+    <task id="LOCAL-00001" summary="first commit crm project">
+      <created>1668491669362</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668491669362</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit crm project" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit crm project" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint type="java-exception">
+          <properties class="java.lang.NoClassDefFoundError" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/crm/src/main/java/com/yibiyihua/crm/workbench/web/controller/TransactionController.java</url>
+          <line>200</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.apache.catalina.connector.RequestFacade" memberName="request" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CRM_Project$Tomcat_9_0_43.ic" NAME="Tomcat 9.0.43 覆盖结果" MODIFIED="1665151926942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
